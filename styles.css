@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body { 
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "header" "nav" "main" "footer";
+    grid-template-rows: 15% 10% 67% 8%;
+    text-align: center;
+}
+
+header {
+    grid-area: header;
+    background-color: rgb(21, 51, 21);
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes spin-logo {
+  
+    100% {
+        rotate: 360deg;
+    }
+}
+
+
+
+nav {
+    grid-area: nav;
+    background-color: rgb(52, 117, 117);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  align-items: center;
+  
+}
+nav li a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(211, 230, 210);
+    font-family: 'Dry Whiteboard Marker', sans-serif;
+    font-size: 120%;
+    text-shadow: 1px 1px 1.5px rgb(164, 184, 158);
+}
+
+
+li > a:hover {
+    animation: dacing-letters 0.5s;
+  }
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes dacing-letters {
+    0%,100%{
+        color: rgb(25, 124, 57);
+    }
+    50% {
+        color: rgb(35, 81, 35);
+        font-size: 2.6rem;
+    }
+}
+
+
+main > #promotion {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(103, 117, 112);
+    background-image: url(/img/fondo.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px 10px rgb(216, 213, 213);
+}
+
+#promotion:hover {
+    text-shadow: 2px 2px 15px rgb(216, 213, 213);
+}
+
+
+#promotion > h1 {
+    color: rgba(200, 233, 179, 0.97);
+    font-size: 400%;
+}
+
+#promo-background {
+    color: rgba(240, 248, 255, 0.619);
+    min-height: 30%;
+}
+
+#promo-background > h1 {
+    font-size: 300%;
+}
+
+#promo-background > p {
+    font-size: 200%;
+    text-decoration: line-through;
+}
+
+main > #articles {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px gray;
+    margin: auto;
+    width: 40%;
+    height: 45%;
+    border-radius: 4px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 10%;
+}
+
+#articles div {
+   display: none;
+}
+
+article > figure {
+    height: 50%;
+}
+
+article > div {
+    height: 40%;
+    width: 85%;
+    margin-top: 1%;
+}
+
+article > figure >img {
+    box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+article > div > h1 {
+    font-size: 88%;
+    text-align: justify;
+    width: 100%;
+    height: 100%;
+    color: rgb(92, 131, 87);
+}
+
+@keyframes cards {
+    0%,100% {
+        rotate: 0deg;
+    }
+    25% {
+        rotate: 1.5deg;
+    }
+    50% {
+        rotate: 0deg;
+        box-shadow: 1px 2px 15px rgb(114, 114, 114);
+    }
+    75%{
+        rotate: -1.5deg;
+    }
+
+}
+.articles:hover{
+    animation: cards 0.5s;
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgb(21, 48, 21);
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+footer div {
+    display: flex;
+    align-items: center;
+    color: aquamarine;
+}
+
+@media (min-width:1000px){
+    #articles div {
+        display: flex;
+     }
+     nav li a {
+        font-size: 200%;
+     }
+
+     article {
+        height: 90%;
+        width: 20%;
+        gap: 10%;
+    }
+}
+
+@media (max-height:680px){
+    #articles div {
+        display: none;
+     }
+}
+
+
+/*//////////////////*/
+
+.products-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px gray;
+    padding: 2% 2% 2% 2%;
+    margin: 1% 1% 2% 1%;
+    height: 25%;
+    width: 30%;
+   
+
+}
+
+.products > figure > img{
+    width: 40%;
+    border-radius: 20px;
+}
+
+.products > p, .products > figure > figcaption{
+    margin-top: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 80%;
+}
+
+@media (min-width:800px){
+    .products {
+        border-radius: 20px;
+        box-shadow: 1px 1px 5px gray;
+        padding: 1% 1% 1% 1%;
+        margin: 0.5% 1% 0.1% 1%;
+        height: 45%;
+        width: 20%;
+    }
+
+    .products > figure > img{
+        width: 60%;
+        border-radius: 20px;
+    }
+}
+
+
+
+
+.products:hover {
+   transform: scale(0.9);
+   transition: 0.8s;
+   box-shadow: 1px 1px 10px rgb(84, 84, 84);
+
+
+   /* //////////////////////CONTAC/////////////////*/
+}
+.contact-container{
+    align-items: center;
+    background-color: rgb(103, 117, 112)
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px rgb(59, 70, 59);
+    height: 80%;
+    width: 60%;
+    background-color: rgb(243, 246, 243);
+    padding: 4%;
+    font-size: 70%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (min-width:900px){
+    .contact {
+        gap: 6%;
+        height: 90%;
+        width: 30%;
+        background-color: rgb(243, 246, 243);
+        font-size: 90%;
+    }
+}
+
+
+/*//////////////////////// INFO ///////////////*/
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px rgb(59, 70, 59);
+    height: 90%;
+    width: 80%;
+    background-color: rgb(243, 246, 243);
+    padding: 5%;
+    word-wrap: break-word;
+}
+
+.paragraph {
+    font-size: 80%;
+    text-align: justify;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: rgb(9, 38, 28);
+    margin-top: 10%;
+}
+
+.youtube {
+   display: flex;
+   height: 70%;
+   width: 60%;
+   gap: 10%;
+   align-items: center;
+  justify-content: center;
+}
+
+
+
+@media (min-width:1000px){
+    .paragraph {
+        font-size: 90%;
+        margin-top: 8%;
+    }
+
+    .info {
+        height: 90%;
+        width: 50%;
+        padding: 5%;
+    }
+    .youtube {
+        display: flex;
+        height: 90%;
+        width: 90%;
+        gap: 10%;
+        align-items: center;
+       justify-content: center;
+     }
+}
+
